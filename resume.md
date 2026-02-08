@@ -157,6 +157,7 @@ Maintained and developed new features for the platform, continuing to improve ed
 
 - **Challenge:** A leading healthcare client needed an efficient way to track and engage with key contacts associated with newly approved medicines and drugs across the EU, US, and Asia. The existing process was slow and heavily reliant on manual research, limiting the client's ability to respond quickly to new market opportunities and build relationships at scale.
 - **Solution:** Designed and developed a custom AI-powered CRM and lead generation system that automatically identified new drug approvals and mapped them to relevant contacts. The system scraped and analysed public data, cross-referenced sources, and validated contact details using smart algorithms. Built-in feedback loops allowed the system to learn and improve over time, increasing accuracy and relevance with continued use.
+- **Human-in-the-Loop Philosophy:** Deliberately chose NOT to use AI to auto-generate outreach emails to key decision-makers (KDMs) and key opinion leaders (KOLs). The reasoning: building genuine personal connections is far more valuable than risking recipients thinking "just more AI-generated slop." Instead, AI handles all the research — drug approvals, LinkedIn profiles, previous publications, conference proceedings, role in the approval process — and the app surfaces all relevant intel so the user is fully prepared for every email and meeting. The human writes the email. The human builds the relationship. AI is the research assistant, not the relationship replacement.
 - **Impact:** Delivered a powerful, self-improving lead generation tool that automated thousands of manual tasks. By integrating AI into the research and validation process, the client gained a faster, more reliable way to identify prospects and engage decision-makers as soon as a new product hit the market — significantly enhancing operational efficiency and business development capacity.
 - **Client:** Confidential Healthcare Partner
 - **Services:** Systems Analysis & Design, Software Architecture, Custom Software Development, AI Integration, Data Scraping & Analysis, Testing & User Support
@@ -188,7 +189,7 @@ As the **sole developer**, scaled the virtual running events platform from **80 
 
 #### 2024 — Backend Mastery, Self-Hosting & AI Deep Dive (at Veedoo)
 
-Continued as Lead Full Stack Developer, deepening backend and infrastructure expertise while exploring AI, self-hosting, and modern database technologies.
+Continued as Lead Full Stack Developer, deepening backend and infrastructure expertise while exploring AI, self-hosting, and modern database technologies. This year also marked a deliberate shift in focus toward **High-Level Design (HLD) and Low-Level Design (LLD)** — with AI code assistants becoming genuinely useful (Claude, Cursor, Copilot), writing code got faster, but the code is only as good as the design behind it. Understanding every part of a system — from the individual service level (micro) to the full system architecture (macro) — became the key skill. Architecture is the moat in the AI era.
 
 **Key Projects at Veedoo:**
 

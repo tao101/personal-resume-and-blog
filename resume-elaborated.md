@@ -57,6 +57,7 @@ Joined Veedoo as a mid-level full stack developer, transitioning from a mobile-f
 **Tech Stack:** React 16.x (SPAs with React Router, Context API for state), React Native 0.59-0.61 (cross-platform mobile), Node.js 12.x with Express 4.x (REST APIs), MongoDB with Mongoose ODM
 
 **Key Activities & Technical Details:**
+
 - Built client-facing single-page applications using React with component-based architecture, React Router for client-side navigation, and Context API / early Redux patterns for state management
 - Continued mobile development with React Native, handling platform-specific native modules, navigation (React Navigation), and async storage for offline-first patterns
 - Developed RESTful APIs with Express.js following MVC patterns, implementing JWT-based authentication, middleware chains for request validation, and Mongoose schemas with MongoDB aggregation pipelines for complex queries
@@ -70,6 +71,7 @@ Joined Veedoo as a mid-level full stack developer, transitioning from a mobile-f
 Took on more projects and responsibilities. Began studying Next.js for its server-side rendering (SSR) capabilities, which offered significant SEO advantages over client-side-only React SPAs — a critical requirement for Veedoo's content-heavy client websites.
 
 **Key Activities & Technical Details:**
+
 - Migrated a client's blog-heavy website from a React SPA to **Next.js with Static Site Generation (SSG)** using `getStaticProps` and `getStaticPaths` for build-time page generation. This moved ~500+ blog posts from client-side-rendered pages to pre-built static HTML served via a CDN (Vercel Edge Network), reducing Time to First Byte (TTFB) from ~2-3s to <100ms and dramatically improving Core Web Vitals scores
 - Implemented **Incremental Static Regeneration (ISR)** with `revalidate` intervals so content updates propagated automatically without full rebuilds — solving the stale content problem inherent in pure SSG
 - Discovered and adopted **serverless architecture** through Vercel's platform: API routes as serverless functions (Node.js lambdas), automatic scaling to zero, preview deployments per Git branch, and environment variable management per deployment context (production/preview/development)
@@ -85,6 +87,7 @@ Took on more projects and responsibilities. Began studying Next.js for its serve
 Dove deeper into server-side rendering, static site generation, and the Jamstack architecture (JavaScript, APIs, Markup), which provided better products for Veedoo's clients — especially those with content-heavy websites requiring fast load times, strong SEO, and high reliability.
 
 **Key Activities & Technical Details:**
+
 - Built and delivered multiple **Jamstack websites** using the pattern of: pre-rendered static frontend (Next.js SSG) + headless CMS (Sanity) + serverless API functions — decoupling the frontend from the backend for independent scaling and deployment
 - Worked on **Icons of Ukraine** — a project using **PHP** (Laravel-style MVC) for the backend with MySQL database, and React for the frontend SPA. This expanded backend language versatility beyond the Node.js ecosystem and provided exposure to PHP's request lifecycle, ORM patterns (Eloquent-style), and traditional server-rendered architectures
 - Started deepening **backend knowledge**: relational database design with PostgreSQL (normalization, indexing strategies, foreign key constraints), Docker containerization (writing Dockerfiles, multi-stage builds, docker-compose for local development environments), Linux server configuration (nginx reverse proxy, SSL/TLS with Let's Encrypt, process management with PM2/systemd)
@@ -94,12 +97,12 @@ Dove deeper into server-side rendering, static site generation, and the Jamstack
 
 **Project Highlight — Lifeline Ukraine (Started 2021, Ongoing):**
 
-> *A digital platform offering psychological support to Ukrainians during moments of crisis, including anonymous chat, mental health resources, and an online suicide awareness training to help people recognise and respond to suicidal thoughts.*
+> _A digital platform offering psychological support to Ukrainians during moments of crisis, including anonymous chat, mental health resources, and an online suicide awareness training to help people recognise and respond to suicidal thoughts._
 
 - **Challenge:** As Ukraine's only national suicide prevention hotline, LifeLine Ukraine plays a critical role in supporting individuals affected by the trauma of war. However, the absence of a user-friendly digital platform limited public awareness and made it harder for Ukrainians in need — especially those in high-risk or frontline areas — to seek help anonymously and discreetly.
 - **Solution:** Developed a secure, mobile-optimised website tailored to vulnerable users. The platform offers anonymous chat-based support, emergency contact tools, and curated mental health resources. The design was guided by trauma-informed UX principles, including calming visuals, intuitive navigation, and a **quick-exit feature** (a prominent button that instantly navigates to an innocuous website like Google — critical for users in unsafe domestic environments). All features were developed in line with GDPR standards, with no personally identifiable information stored in chat sessions. Implemented **HTTPS everywhere** with HSTS headers, Content Security Policy (CSP) headers to prevent XSS, and secure cookie handling. Also developed a free online suicide awareness training course with progress tracking and completion certificates.
 - **Impact:** More than 1,500 people use the platform's chat feature each month, providing Ukrainians — including refugees who are unable to call the hotline number from abroad — with easy and safe access to lifesaving mental health support.
-- **Client Testimonial:** *"I've been impressed with the level of professionalism of the Veedoo team and management since we began working together almost 5 years ago."* — Paul Nailand, Lifeline Ukraine
+- **Client Testimonial:** _"I've been impressed with the level of professionalism of the Veedoo team and management since we began working together almost 5 years ago."_ — Paul Nailand, Lifeline Ukraine
 - **Services:** Web Development, UX/UI Design, Usability Testing, Information Architecture, CMS, Hosting, Analytics
 - **Technical Specifics:** Responsive design (mobile-first, tested across iOS Safari, Android Chrome, and low-bandwidth connections common in rural Ukraine), WCAG 2.1 AA accessibility compliance, Google Analytics with custom event tracking for anonymous usage patterns (no PII), automated uptime monitoring
 
@@ -115,7 +118,7 @@ A pivotal year. The Russian invasion of Ukraine in February 2022 changed everyth
 
 **1. Ukraine Shelter (ukraineshelter.com) — February 2022**
 
-> *Launched amidst the chaos and confusion of the Russian invasion of Ukraine.*
+> _Launched amidst the chaos and confusion of the Russian invasion of Ukraine._
 
 Nobody remembers who had the idea or exactly when the project started, but the domain name was registered on **25 February** (1 day after the invasion) and the first version of the site launched on **27 February 2022** — just 3 days after the invasion began.
 
@@ -133,7 +136,7 @@ The platform built in 2021 became more important than ever due to the war. Focus
 
 **3. EUvsDisinfo — Backend & CMS Architecture (Veedoo's Biggest Client)**
 
-> *An AI-enhanced multilingual digital platform helping citizens across Europe and beyond recognise, understand, and build resilience to Russian disinformation through trusted content, expert analysis, and public education.*
+> _An AI-enhanced multilingual digital platform helping citizens across Europe and beyond recognise, understand, and build resilience to Russian disinformation through trusted content, expert analysis, and public education._
 
 - **Challenge:** In response to growing disinformation following the 2014 Ukrainian revolution and Russia's annexation of Crimea, the EEAS launched EUvsDisinfo — an initiative to collect, analyse, and expose Russian disinformation across Europe. The EEAS required a multilingual platform and a custom content management system to support collaboration across its international network of analysts, contributors, and editors.
 - **Solution:** Designed and developed a custom "Disinformation Management System" (DMS) to serve as a secure, AI-enhanced editing and publishing platform, alongside a fully responsive public-facing website. The system enables real-time editorial collaboration and content workflows, supports 13 languages, and aligns with GDPR and EU usability standards. The platform also hosts a library of educational resources, functioning both as a research hub and a public awareness tool.
@@ -143,6 +146,7 @@ The platform built in 2021 became more important than ever due to the war. Focus
 - **Duration:** 9 years, ongoing
 
 **Personal contributions to EUvsDisinfo in 2022 — Technical Deep Dive:**
+
 - **CMS Architecture:** Took ownership of the backend and CMS infrastructure built on **Sanity CMS**. Sanity uses a real-time, collaborative editing model (similar to Google Docs) backed by a document-oriented data store with **GROQ** (Graph-Relational Object Queries) as its query language. Migrated the entire content schema and editorial workflows from Sanity v1 to **Sanity v2**, which involved rewriting custom input components, updating the Studio configuration, and migrating the GROQ queries powering the public-facing website
 - **Disinformation Evidence Automation Pipeline:** Built a Node.js-based automation system that, when an analyst flagged a disinformation article:
   1. **Web scraping:** Used Puppeteer (headless Chrome) to navigate to the flagged URL and capture a full-page screenshot at multiple viewport sizes
@@ -166,15 +170,17 @@ Maintained and developed new features for the platform, continuing to improve ed
 
 **2. OptiGen — AI-Powered Lead Generation in the Pharmaceutical Sector**
 
-> *Built using the newly released GPT API combined with web scraping to create an intelligent lead generation system.*
+> _Built using the newly released GPT API combined with web scraping to create an intelligent lead generation system._
 
 - **Challenge:** A leading healthcare client needed an efficient way to track and engage with key contacts associated with newly approved medicines and drugs across the EU, US, and Asia. The existing process was slow and heavily reliant on manual research, limiting the client's ability to respond quickly to new market opportunities and build relationships at scale.
 - **Solution:** Designed and developed a custom AI-powered CRM and lead generation system that automatically identified new drug approvals and mapped them to relevant contacts. The system scraped and analysed public data, cross-referenced sources, and validated contact details using smart algorithms. Built-in feedback loops allowed the system to learn and improve over time, increasing accuracy and relevance with continued use.
+- **Human-in-the-Loop Philosophy:** Deliberately chose NOT to use AI to auto-generate outreach emails to KDMs and KOLs — despite having all the data and AI capability to do so. The reasoning: building genuine personal connections with key decision-makers is far more valuable than risking them thinking "just more AI-generated slop." People can tell. Especially people who get hundreds of outreach emails a week. Instead, the system was designed so that **AI does the research, humans do the relationship.** The system automatically scraped pharmaceutical regulatory databases for new drug approvals, then used GPT to crawl public data — press releases, LinkedIn profiles, conference proceedings, previous publications — and built comprehensive dossiers on relevant contacts. Their background, previous work, LinkedIn activity, role in the approval process. All of this was presented to the user along with contact information, so they were fully prepared to write a personal email and walk into any meeting knowing exactly who they were talking to. Human-in-the-loop by design, not as a fallback.
 - **Impact:** Delivered a powerful, self-improving lead generation tool that automated thousands of manual tasks. By integrating AI into the research and validation process, the client gained a faster, more reliable way to identify prospects and engage decision-makers as soon as a new product hit the market — significantly enhancing operational efficiency and business development capacity.
 - **Client:** Confidential Healthcare Partner
 - **Services:** Systems Analysis & Design, Software Architecture, Custom Software Development, AI Integration, Data Scraping & Analysis, Testing & User Support
 
 **Technical Deep Dive — OptiGen:**
+
 - **Data Pipeline:** Built a scheduled scraping pipeline using Node.js with Puppeteer and Cheerio that monitored pharmaceutical regulatory databases (FDA, EMA, PMDA) for new drug approvals. When a new approval was detected, the system extracted structured data: drug name, generic name, approval date, therapeutic area, indication, region, and sponsoring company
 - **AI-Powered Contact Discovery:** Used the **OpenAI GPT API** (initially GPT-3.5 Turbo, upgraded to GPT-4 as it became available) to:
   - Parse unstructured web content (press releases, LinkedIn profiles, conference proceedings) to identify key decision-makers associated with each drug approval
@@ -189,11 +195,12 @@ Maintained and developed new features for the platform, continuing to improve ed
 
 **Product Engineer** (July 2023 – September 2024)
 
-> *Membership platform for runners. Everyone. Everywhere. Everyrun.*
+> _Membership platform for runners. Everyone. Everywhere. Everyrun._
 
 As the **sole developer**, scaled the virtual running events platform from **80 to over 17,659 users** by delivering comprehensive features and robust infrastructure.
 
 **Tech Stack (Detailed):**
+
 - **Frontend:** Next.js 14 (App Router with React Server Components, Server Actions for mutations, Streaming SSR with Suspense boundaries), TypeScript (strict mode), Tailwind CSS for styling
 - **Mobile:** React Native Expo (managed workflow) with shared TypeScript types between web and mobile
 - **Database:** PostgreSQL hosted on **Neon** (serverless Postgres with branching — each preview deployment got its own isolated database branch, enabling safe testing of schema migrations without affecting production data)
@@ -205,6 +212,7 @@ As the **sole developer**, scaled the virtual running events platform from **80 
 - **Hosting:** Vercel (with preview deployments per PR, automatic HTTPS, edge caching)
 
 **Key Achievements — Technical Details:**
+
 - **Development Workflow Architecture:** Architected a streamlined development process leveraging **Vercel preview deployments** + **Neon DB branching**. Every Git push created a preview deployment with its own isolated database branch (forked from production data). This meant the CEO and stakeholders could review features with real data in isolated environments, and schema migrations could be tested against production-like data before merging. This workflow enabled rapid iteration: features went from idea to production in days, not weeks
 - **Virtual Event System:** Built a complete virtual race platform where users could log GPS-tracked runs (via mobile app), participate in virtual events across time zones, track progress on leaderboards with real-time updates (using PostgreSQL LISTEN/NOTIFY via Neon), and earn achievements. Implemented distance calculation using the Haversine formula on GPS coordinates
 - **Charitable Donation Integration:** Integrated Stripe Connect to enable charitable donations tied to running events — runners could raise money for specific causes, with automatic fund distribution to registered charities
@@ -212,37 +220,49 @@ As the **sole developer**, scaled the virtual running events platform from **80 
 - Authored a comprehensive **30-page codebase documentation** covering architecture decisions (with ADR format), database schema documentation, API reference, deployment procedures, and onboarding guide — ensuring a smooth handover and long-term project success upon project completion
 
 **Veedoo Case Study on EveryRun:**
+
 - **Challenge:** Everyrun set out to create a global platform that connects runners of all levels through community-driven races and running events. The challenge was to build a seamless user experience that supports both race participants and event organizers.
 - **Solution:** Full UX research, user interviews with both runners and organizers, and usability testing across multiple geographies. The insights guided a redesign of the web platform's structure, focusing on accessibility, speed, and clarity. A revised information architecture and new product design were implemented to streamline event discovery, registration, and management. The platform supports multilingual content, custom branding for events, and real-time updates.
 - **Impact:** Event participation increased and user satisfaction improved thanks to simplified workflows for both runners and hosts. The intuitive design has helped position Everyrun as a leader in digital running experiences — uniting people around the world through sport.
 
 ---
 
-#### 2024 — Backend Mastery, Self-Hosting & AI Deep Dive (at Veedoo)
+#### 2024 — Backend Mastery, Self-Hosting, AI Deep Dive & Architecture Focus (at Veedoo)
 
 Continued as Lead Full Stack Developer, deepening backend and infrastructure expertise while exploring AI, self-hosting, and modern database technologies.
+
+**Shift to Architecture-First Thinking (HLD/LLD):**
+
+This year marked a deliberate shift in focus toward **High-Level Design (HLD) and Low-Level Design (LLD)** as the primary skill differentiator. With AI code assistants becoming genuinely useful — Claude, Cursor, Copilot — writing code got much faster. But the code is only as good as the design behind it. A language model can implement a function in seconds. It can't tell you whether that function should exist, where it should live in the system, or how it connects to everything else.
+
+Started focusing heavily on understanding every part of a system — from the individual service level (micro) to the full system architecture (macro). This applies everywhere: when designing ParliamentConnect's ML pipeline (2025), the value wasn't in writing Python code — it was in understanding how speaker diarization feeds into transcription feeds into face detection feeds into face recognition, and designing the data flow between each stage. When building the community platform's multi-tenant architecture, the value was in designing RLS policies that enforce data isolation at the database level, not in writing the Next.js components.
+
+In the AI era, **architecture is the moat**. AI can help implement anything. But you need to know what to implement and how it fits together. HLD and LLD are more important now than ever.
 
 **Key Projects at Veedoo:**
 
 **1. EUvsDisinfo — Sanity v3 Migration & Internal Tooling**
+
 - Upgraded the CMS from **Sanity v2 to Sanity v3** — a major migration involving the transition from Sanity's legacy Studio framework to the new one built on Vite (replacing Webpack), React 18 (with concurrent features), and a new plugin architecture. This required rewriting all custom Studio plugins, migrating the document schema definitions to the new format, updating GROQ queries for v3's updated query engine, and testing the migration with production data to ensure zero content loss
 - Built additional internal tools for the editorial team using **Sanity's custom document actions** and **custom views** (React components embedded in the Studio) to streamline workflows: bulk content operations, cross-language content validation (ensuring all 13 language versions are in sync), and automated content quality checks
 
 **2. Runday — "Chat with Our DB" AI Feature**
 
-> *An online ecosystem powering free, inclusive 5K events — helping thousands of runners across multiple cities get moving, connect locally, and grow a movement to promote community health.*
+> _An online ecosystem powering free, inclusive 5K events — helping thousands of runners across multiple cities get moving, connect locally, and grow a movement to promote community health._
 
 - Built a conversational AI interface ("Chat with our DB") for the Runday client, allowing non-technical users (event organizers, community managers) to query their PostgreSQL database using natural language. For example: "How many new runners joined in Kyiv last month?" or "What's the average attendance for Saturday events in 2024?"
 - **Technical Implementation:** Built a **text-to-SQL** pipeline using the OpenAI GPT-4 API. The system takes a natural language query, combines it with the database schema (table definitions, column descriptions, relationships, and sample data) as context in the system prompt, and generates a SQL query. The generated SQL is validated against a whitelist of allowed operations (SELECT only — no mutations), executed against a read-only database replica, and the results are formatted back into natural language by a second LLM call. Implemented guardrails including query timeout limits, result set size limits, and PII redaction
 - Studied **RAG (Retrieval-Augmented Generation)** architecture patterns, **text embeddings** (OpenAI ada-002, later text-embedding-3-small), and **vector databases** (pgvector extension for PostgreSQL) to understand how to build semantic search and context-aware Q&A systems for future projects
 
 **Runday Platform (Veedoo's 9-year ongoing project):**
+
 - **Challenge:** Runday is a free, community-based running initiative that brings people together every Saturday morning for a friendly 5km run, jog, or walk. As participation grew, so did the need for a robust digital infrastructure to support community engagement, streamline event coordination, and enhance the experience for both runners and organisers.
 - **Solution:** Designed and developed a scalable, multilingual platform tailored to the needs of grassroots sports communities. Built a custom community management system, a reliable race timing solution, and a user-friendly mobile app. Supported brand development through graphic design, social media marketing, and automated newsletters.
 - **Impact:** Runday has grown into a vibrant network of more than 18,000 runners across multiple countries, with over 5,000 events organised to date.
-- **Client Testimonial:** *"The company's dedication to excellence is reflected in every aspect of their work. The successful completion of the 'Runday' project, within budget and timeline, is a testament to Veedoo's high standards."* — Alona Lashchenko, Runday
+- **Client Testimonial:** _"The company's dedication to excellence is reflected in every aspect of their work. The successful completion of the 'Runday' project, within budget and timeline, is a testament to Veedoo's high standards."_ — Alona Lashchenko, Runday
 
 **3. Supabase Exploration**
+
 - Used **Supabase** for a Veedoo client project, evaluating the full stack: PostgreSQL with Row Level Security (RLS) policies for fine-grained access control, GoTrue for authentication (email/password, OAuth providers), Supabase Storage (S3-compatible object storage with RLS), Realtime (WebSocket-based subscriptions for live data sync), and PostgREST (auto-generated REST API from the database schema). Appreciated the developer experience — especially RLS policies that move authorization logic to the database layer — but noted pricing concerns for production use at scale
 - Since EUvsDisinfo requires self-hosting on EU-based servers (as an EU-funded project, all data must remain within EU jurisdiction), began exploring **self-hosted Supabase** as an alternative to the SaaS offering
 
@@ -258,6 +278,7 @@ This year marked the beginning of a fundamental shift in infrastructure philosop
 - This exploration laid the groundwork for what would become a core competency — over the following two years, **Coolify became the default deployment platform for all Veedoo and client projects**, hosting everything from Next.js applications to self-hosted Supabase instances, Trigger.dev workers, n8n automation workflows, and more
 
 **Professional Development:**
+
 - Completed courses on **NestJS** (understanding the Angular-inspired, decorator-based, module-driven architecture for building scalable Node.js backend services — controllers, providers, guards, interceptors, pipes, and the dependency injection system)
 - Completed advanced **TypeScript** courses covering: advanced generics and conditional types, mapped types and template literal types, discriminated unions for type-safe state machines, the `infer` keyword for type extraction, module augmentation, and declaration merging
 - Completed **PostgreSQL** courses covering: query optimization (EXPLAIN ANALYZE, index types — B-tree, GIN, GiST, BRIN), partitioning strategies, window functions, CTEs (Common Table Expressions), materialized views, PL/pgSQL stored procedures, and connection pooling (PgBouncer)
@@ -277,6 +298,7 @@ A landmark year — promoted to CTO and took on the most technically ambitious p
 Ongoing maintenance and feature development for Veedoo's flagship EU project. Continued to evolve the Disinformation Management System, optimize content delivery for the public-facing site (serving millions of annual users), and ensure compliance with evolving EU digital regulations.
 
 **2. Community Platform (Skool.com Clone) with Built-in AI Tools**
+
 - Built a full community/learning platform for a Veedoo client, inspired by Skool.com's model of combining community discussion, courses, and membership management into a single platform
 - **Technical Architecture:** Next.js App Router with React Server Components for the frontend, self-hosted Supabase for the backend (PostgreSQL with RLS policies for community-level data isolation, Realtime for live discussions, Storage for media uploads). Built with a multi-tenant architecture where each community creator gets an isolated data scope enforced at the database level via RLS
 - Integrated AI tools directly into the platform: AI-powered content summarization (for long discussion threads), AI-assisted course content generation, and smart content moderation using the OpenAI Moderation API
@@ -285,7 +307,7 @@ Ongoing maintenance and feature development for Veedoo's flagship EU project. Co
 
 **3. ParliamentConnect (parliamentconnect.com) — Solo Build**
 
-> *A platform that automatically discovers, transcribes, and publishes parliamentary speeches across all social media platforms.*
+> _A platform that automatically discovers, transcribes, and publishes parliamentary speeches across all social media platforms._
 
 Built this entire project solo — both frontend and backend — representing the most technically complex project of the career to date. This project required learning Python ML/AI tooling, GPU computing with CUDA, and video/audio processing from scratch.
 
@@ -326,13 +348,14 @@ Parliament Video Source
 ```
 
 **Frontend & Backend:**
+
 - **Next.js** with App Router, React Server Components, and Server Actions for mutations (avoiding a separate API layer). Used Streaming SSR with Suspense for fast initial loads while heavy data fetches complete in the background
 - **Self-hosted Supabase** for: PostgreSQL database (with RLS policies for user-level data access), GoTrue authentication (email/password + OAuth), Realtime subscriptions (WebSocket-based live updates when new clips are processed), and Storage (for video clip files, MP photos, and thumbnails)
 - **Supabase Database Triggers:** PostgreSQL triggers + `pg_net` extension to make HTTP calls to RunPod's serverless API when new parliament session records are inserted — eliminating the need for a polling mechanism
 
 **Video Processing Pipeline — Technical Deep Dive (Python + CUDA):**
 
-This was an entirely new domain. Built a Python-based ML pipeline running on **RunPod serverless** infrastructure with **NVIDIA RTX PRO 6000** GPUs (48GB VRAM):
+This was an entirely new domain. Built a Python-based ML pipeline running on **RunPod serverless** infrastructure with **NVIDIA RTX PRO 6000** GPUs (96GB VRAM):
 
 1. **Video Download & Pre-processing:** Downloads full parliament session videos (often 2-8 hours long), extracts audio track (FFmpeg), and splits video into frames for visual analysis
 
@@ -367,6 +390,7 @@ This was an entirely new domain. Built a Python-based ML pipeline running on **R
 **Results:** Achieved **98% accuracy** in speaker identification and attribution, with continuous improvement as more MP face images are added to the training database. The system processes a full parliament session end-to-end in approximately 30-45 minutes (depending on session length), compared to what would take a human team days of manual work.
 
 **Social Media Integration:**
+
 - Self-hosted **Postiz** (open-source social media management tool) on Coolify
 - Integrated Postiz's REST API into the ParliamentConnect frontend, allowing users to connect their social media accounts (Twitter/X, Facebook, LinkedIn, Instagram) and schedule/publish parliamentary clips directly from the app
 - Built the integration so users authenticate with ParliamentConnect only — the Postiz OAuth flows are handled server-side via API calls, so users never need to interact with the Postiz UI directly
@@ -374,6 +398,7 @@ This was an entirely new domain. Built a Python-based ML pipeline running on **R
 **Tech Stack:** Next.js (App Router, RSC, Server Actions), Supabase (self-hosted — PostgreSQL, RLS, Realtime, Storage, pg_net, pgvector), Python 3.11, PyTorch, CUDA 12.x, pyannote.audio, faster-whisper, RetinaFace, face_recognition/InsightFace, FFmpeg, RunPod (serverless GPU — NVIDIA RTX PRO 6000), Postiz (self-hosted on Coolify)
 
 **4. CTO Responsibilities — AI Enablement & Team Development:**
+
 - Introduced AI automation across Veedoo to reduce time spent on repetitive monthly tasks (invoice generation, report compilation, content scheduling — all automated via n8n workflows with AI-assisted content generation)
 - Created an **AI usage guide** for the team covering:
   - How to write effective prompts and system instructions for code generation
@@ -395,6 +420,7 @@ This was an entirely new domain. Built a Python-based ML pipeline running on **R
 Joined [Baseloop](https://baseloop.io) as a founding engineer, working alongside the CEO and Lead Developer Kevin to build and scale the product.
 
 **Key Contributions — Technical Details:**
+
 - Led the migration from SaaS-dependent infrastructure to a **fully self-hosted setup on Coolify**:
   - **Trigger.dev:** Migrated from Trigger.dev's SaaS offering to a self-hosted instance using a custom Docker Compose configuration (which later evolved into the open-source [coolify-trigger-v4](https://github.com/tao101/coolify-trigger-v4) template). This eliminated per-execution pricing and SaaS rate limits that were bottlenecking background job throughput
   - **Supabase:** Migrated from Supabase's SaaS to a self-hosted instance using a custom Coolify template (which later became [latest-supabase-coolify-template](https://github.com/tao101/latest-supabase-coolify-template)). Used the [supabase-sync](https://www.npmjs.com/package/supabase-sync) CLI tool (which was also built as a result of this migration) to perform the full data migration including database schema, data, auth users (with preserved password hashes), and storage files
@@ -423,6 +449,7 @@ While studying for a Bachelor of Science in Computer Engineering at Kharkiv Nati
 **Tech Stack:** React Native 0.55-0.60, JavaScript (ES6+), React Navigation, AsyncStorage, native module bridging, REST API integration, Redux for state management, Firebase (authentication, cloud messaging, analytics)
 
 **Key Technical Experience:**
+
 - Built cross-platform apps (iOS + Android) from a single codebase, handling platform-specific differences through conditional code and native module bridging
 - Implemented offline-first patterns with AsyncStorage and background sync for apps that needed to work in areas with unreliable connectivity
 - Managed the full app lifecycle: development, testing (on physical devices and simulators), app store submission (App Store Connect + Google Play Console), and post-launch updates via CodePush for over-the-air JavaScript bundle updates
@@ -434,6 +461,7 @@ While studying at Universit Ibn Zohr, worked as a freelance Android application 
 **Tech Stack:** Java, Android SDK (API levels 19-25), SQLite (local database), RESTful API integration (Retrofit, OkHttp), XML layouts, Material Design components, Google Maps API, Firebase (Cloud Messaging, Analytics), Git
 
 **Key Technical Experience:**
+
 - Built native Android applications using Java with the Android SDK, following Google's Material Design guidelines
 - Implemented local data persistence with SQLite databases and ContentProviders for inter-app data sharing
 - Consumed RESTful APIs using Retrofit with OkHttp for network calls, Gson for JSON serialization, and implemented caching strategies for offline access
@@ -444,7 +472,7 @@ While studying at Universit Ibn Zohr, worked as a freelance Android application 
 
 ## Additional Veedoo Project: Go Help Now
 
-> *A multinational humanitarian startup non-profit which helps volunteers find a project for cooperation.*
+> _A multinational humanitarian startup non-profit which helps volunteers find a project for cooperation._
 
 - **Challenge:** Go Help Now, a multinational humanitarian startup, set out to create a digital platform that empowers people to respond quickly and meaningfully during crises. The organization needed to build a trusted, user-friendly brand and web platform that connects volunteers with urgent projects, facilitates cash donations, and provides access to safe housing solutions.
 - **Solution:** Developed the organization's visual identity and branding. Created a comprehensive information architecture and modular design system supporting three core functions: volunteer matching, donation processing, and housing coordination. Built with usability and accessibility in mind, with usability testing across international users.
@@ -464,6 +492,7 @@ Built and published open-source tooling to solve real problems encountered while
 A production-ready starter template for building modern web applications with Next.js and self-hosted Supabase, optimized for deployment on Coolify. Born from the patterns and architecture refined across multiple Veedoo and client projects (ParliamentConnect, Community Platform, etc.).
 
 **Key Features:**
+
 - Full-stack architecture with Next.js App Router (React 19 with Server Components, TypeScript in strict mode, Shadcn UI component library, Legend State for reactive state management with fine-grained reactivity and automatic persistence)
 - Self-hosted Supabase instance with automated database migrations (via Supabase CLI), Row Level Security (RLS) policies for fine-grained access control, Auth (email/password + OAuth providers), Storage (S3-compatible with RLS), and Realtime (WebSocket subscriptions)
 - Enterprise-grade security patterns: role-based access control enforced at the database level via RLS, CSRF protection, secure HTTP-only cookies, Content Security Policy headers, and input validation with Zod
@@ -480,6 +509,7 @@ A production-ready starter template for building modern web applications with Ne
 Docker Compose configurations for self-hosting Trigger.dev v4 on Coolify — providing a complete setup for running background jobs, scheduled tasks, and workflow automation without relying on Trigger.dev's SaaS offering. This project was born from the Baseloop migration and refined through production use.
 
 **Key Features:**
+
 - Complete self-hosted Trigger.dev v4 setup: web application, PostgreSQL (primary database), Redis (caching and session storage), ElectricSQL (real-time database synchronization), ClickHouse (analytics and event storage for high-throughput write workloads), private Docker registry (for deploying worker code), MinIO (S3-compatible object storage for packages and assets), and Supervisor (manages worker execution and Docker operations)
 - **Three deployment options:**
   - **Distributed (Recommended for production):** Separates webapp + databases from workers across multiple servers. Enables horizontal scaling — add worker servers independently as workload grows. Workers crash independently without affecting the webapp. Includes security hardening, resource limits (Docker memory/CPU constraints), log rotation, and NVMe-optimized I/O settings
@@ -497,6 +527,7 @@ Docker Compose configurations for self-hosting Trigger.dev v4 on Coolify — pro
 A CLI tool to perform full one-time migrations between Supabase instances — solving the real problem of migrating from Supabase SaaS to self-hosted (or between self-hosted instances) without losing data, auth users, or storage files. Built out of necessity during the Baseloop migration and used across multiple Veedoo projects.
 
 **Key Features:**
+
 - **Full migration support:**
   - **Database schema:** Tables, functions, triggers, RLS policies — exported via `pg_dump` with schema-only mode, filtered to exclude Supabase's internal schemas (`auth`, `storage`, `realtime`, etc. are handled separately)
   - **Database data:** Full data migration using PostgreSQL's COPY format for high-performance bulk inserts (orders of magnitude faster than INSERT statements)
@@ -517,6 +548,7 @@ A CLI tool to perform full one-time migrations between Supabase instances — so
 A Docker Compose template for deploying the latest Supabase stack on Coolify with automatic JWT/API key generation — solving the problem of Coolify's built-in Supabase template being outdated and lacking production-ready configurations.
 
 **Key Features:**
+
 - Deploys the **full Supabase stack** (12 services): Kong (API Gateway — routes all API requests), Studio (admin dashboard UI), Auth/GoTrue (authentication service — email/password, OAuth, magic links), PostgREST (auto-generated REST API from PostgreSQL schema), Realtime (WebSocket server for live subscriptions), Storage (S3-compatible file storage API), PostgreSQL 15 (primary database), MinIO (S3-compatible object storage backend for Supabase Storage), Supavisor (Elixir-based connection pooler — replacement for PgBouncer), and Analytics/Logflare (logging and analytics)
 - **Automatic secure credential generation** using Coolify's magic environment variables — `SERVICE_PASSWORD_JWT` generates the JWT secret, and the anonymous/service role API keys are valid JWTs signed with this secret (generated at container startup). PostgreSQL passwords, admin credentials, and all inter-service secrets are also auto-generated. No manual secret management required
 - **Two configurations:**
@@ -535,33 +567,43 @@ A Docker Compose template for deploying the latest Supabase stack on Coolify wit
 ## Technical Skills
 
 ### Languages
+
 JavaScript (ES6+), TypeScript (strict mode, advanced generics, conditional types, discriminated unions), Python 3.x (ML/AI pipelines, data processing), PHP (MVC/Laravel patterns), Java (Android SDK), SQL (PostgreSQL, MySQL), HTML5, CSS3
 
 ### Frontend
+
 React 18/19 (Server Components, Suspense, concurrent features), Next.js 13-15 (App Router, Pages Router, SSR, SSG, ISR, Server Actions, Streaming, Middleware), React Native 0.60+ / Expo (managed workflow, EAS builds), Tailwind CSS, Shadcn UI, Legend State (reactive state management), Redux, React Query/TanStack Query
 
 ### Backend
+
 Node.js 18+ (ESM, Workers, Streams), Express 4.x (middleware, routing, error handling), NestJS (modules, providers, guards, interceptors, dependency injection), Next.js API Routes & Server Actions, PHP (MVC), Python (FastAPI basics, scripting, ML pipelines)
 
 ### Databases & ORMs
+
 PostgreSQL 14-16 (RLS, pg_net, pgvector, PL/pgSQL, partitioning, window functions, CTEs, EXPLAIN ANALYZE optimization), MongoDB (aggregation pipelines, Mongoose ODM), Supabase (hosted & self-hosted — Auth, Storage, Realtime, PostgREST, RLS policies), Neon (serverless Postgres, DB branching), Drizzle ORM (type-safe SQL), MySQL, SQLite
 
 ### CMS & Content
+
 Sanity v2 & v3 (GROQ queries, custom Studio plugins, document actions, webhooks, real-time collaborative editing), Jamstack architecture (headless CMS + static generation + serverless functions)
 
 ### AI & Machine Learning
+
 OpenAI GPT API (GPT-3.5/4, function calling, embeddings — ada-002, text-embedding-3-small), RAG (Retrieval-Augmented Generation) pipelines, Vector databases (pgvector), Text-to-SQL pipelines, PyTorch, CUDA 12.x (GPU computing on NVIDIA RTX PRO 6000), pyannote.audio (speaker diarization), faster-whisper (speech-to-text), RetinaFace/MTCNN (face detection), face_recognition/InsightFace (face recognition with embedding similarity search), FFmpeg (video/audio processing), OpenAI Moderation API
 
 ### DevOps & Infrastructure
+
 Docker (Dockerfile, multi-stage builds), Docker Compose (multi-service orchestration), **Coolify** (primary self-hosted PaaS — deployed and managed Next.js apps, Supabase, Trigger.dev, n8n, Postiz, and more across production environments), Vercel (serverless hosting, edge network, preview deployments), RunPod (serverless GPU computing), Hetzner Cloud (EU data centers, NVMe servers — CCX/CX series), Traefik (reverse proxy, auto SSL via Let's Encrypt), Nginx, Linux server administration (SSH hardening, UFW/iptables, systemd, log management), n8n (self-hosted workflow automation), Postiz (self-hosted social media management), Trigger.dev (self-hosted background jobs & scheduled tasks), restic (encrypted backups to S3-compatible storage)
 
 ### Payments
+
 Stripe (subscriptions, one-time payments, webhook lifecycle handling), Stripe Connect (Standard accounts — multi-party marketplace payments, automated payouts, tax reporting)
 
 ### Analytics & Testing
+
 PostHog (self-hosted analytics, feature flags, A/B testing, session replays, funnels), Sentry (error tracking, performance monitoring), Playwright (E2E testing, page object model), Jest (unit testing), Lucia-Auth (session-based authentication), Zod (runtime type validation, schema-first API design)
 
 ### Tools & Workflow
+
 Git (branching strategies, interactive rebase, cherry-pick), Claude Code (Anthropic CLI — CLAUDE.md project instructions, MCP server integration), Cursor IDE (Composer, chat, tab completion, .cursorrules), MCP (Model Context Protocol — connecting AI tools to project-specific data sources), Cursor BugBot (automated AI code review on PRs), Fibery.io (custom CRM/project management), OpenTimestamps (blockchain-based cryptographic timestamping for evidence preservation), Puppeteer/Cheerio (web scraping), Swagger/OpenAPI (API documentation)
 
 ---

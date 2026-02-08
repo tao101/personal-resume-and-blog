@@ -86,7 +86,7 @@ In 2025, I took on the most technically ambitious project of my career. Solo.
 
 **ParliamentConnect** automatically processes parliament session videos — 2 to 8 hours long — and identifies who said what. It transcribes every speech and attributes it to the specific MP who delivered it. With 98% accuracy. In 30-45 minutes.
 
-The tech: Python ML pipeline running on RunPod serverless GPUs (NVIDIA RTX PRO 6000, 48GB VRAM). Speaker diarization with pyannote.audio. Transcription with Whisper (faster-whisper for 4x speed). Face detection with RetinaFace. Face recognition matching against an MP database stored in PostgreSQL with pgvector. Video clip extraction with FFmpeg. Frontend in Next.js. Backend on self-hosted Supabase.
+The tech: Python ML pipeline running on RunPod serverless GPUs (NVIDIA RTX PRO 6000, 96GB VRAM). Speaker diarization with pyannote.audio. Transcription with Whisper (faster-whisper for 4x speed). Face detection with RetinaFace. Face recognition matching against an MP database stored in PostgreSQL with pgvector. Video clip extraction with FFmpeg. Frontend in Next.js. Backend on self-hosted Supabase.
 
 I had zero experience with Python ML, CUDA, or GPU computing when I started.
 
@@ -132,12 +132,13 @@ Looking back at the trajectory — from writing GROQ queries to training neural 
 
 ---
 
-*This is Part 4 of a 5-part series. Previously: [How I Scaled EveryRun from 80 to 17,659 Users Solo](#). Next up: [Joining a Startup as Founding Engineer — My Baseloop Story](#).*
+_This is Part 4 of a 5-part series. Previously: [How I Scaled EveryRun from 80 to 17,659 Users Solo](#). Next up: [Joining a Startup as Founding Engineer — My Baseloop Story](#)._
 
-*Check out the open source tools I built along the way:*
-- *[Self-Hosted Next.js & Supabase Starter Template](https://github.com/tao101/Self-Hosted-Next.js-Supabase-Fullstack-Starter-Template)*
-- *[Coolify Trigger.dev v4](https://github.com/tao101/coolify-trigger-v4)*
-- *[Supabase Sync](https://github.com/tao101/supabase-sync-script) (npm: `supabase-sync`)*
-- *[Latest Supabase Coolify Template](https://github.com/tao101/latest-supabase-coolify-template)*
+_Check out the open source tools I built along the way:_
 
-*Find me on [GitHub](https://github.com/tao101), [LinkedIn](https://www.linkedin.com/in/taoufiqlotfi), or at [taoufiqlotfi.com](https://www.taoufiqlotfi.com).*
+- _[Self-Hosted Next.js & Supabase Starter Template](https://github.com/tao101/Self-Hosted-Next.js-Supabase-Fullstack-Starter-Template)_
+- _[Coolify Trigger.dev v4](https://github.com/tao101/coolify-trigger-v4)_
+- _[Supabase Sync](https://github.com/tao101/supabase-sync-script) (npm: `supabase-sync`)_
+- _[Latest Supabase Coolify Template](https://github.com/tao101/latest-supabase-coolify-template)_
+
+_Find me on [GitHub](https://github.com/tao101), [LinkedIn](https://www.linkedin.com/in/taoufiqlotfi), or at [taoufiqlotfi.com](https://www.taoufiqlotfi.com)._

@@ -43,10 +43,11 @@ Full stack developer and CTO with 10+ years of experience building and shipping 
 
 #### Lead Full Stack Developer | End of 2022 – Mid 2025
 
+- Shifted focus to **High-Level Design (HLD) and Low-Level Design (LLD)** as AI coding tools matured — championed architecture-first thinking where understanding systems from micro (individual service) to macro (full system) became the key differentiator over writing code faster
 - Led development on Veedoo's largest client account (**EUvsDisinfo** for the European External Action Service), managing the backend, CMS architecture, and 13-language content infrastructure
 - Built an automated **evidence preservation pipeline** for disinformation cases: web scraping, HTML archiving, and blockchain timestamping (OpenTimestamps) to produce immutable, legally defensible proof
 - Migrated CMS from Sanity v2 to v3 with zero content loss across 19,000+ documents; built custom editorial tools that streamlined content operations across a distributed international team
-- Developed **OptiGen**, an AI-powered CRM and lead generation system for a pharmaceutical client, using GPT API + web scraping to automatically identify drug approvals and map them to key decision-makers
+- Developed **OptiGen**, an AI-powered CRM and lead generation system for a pharmaceutical client — designed with a **human-in-the-loop philosophy**: AI handles all research (drug approvals, LinkedIn profiles, publications, conference activity) and builds comprehensive dossiers on key decision-makers, but humans write the outreach emails and build the relationships. Deliberately chose NOT to auto-generate emails — genuine personal connections beat AI-generated "slop"
 - Built a **natural language database query interface** ("Chat with our DB") for Runday (18,000+ runners, 5,000+ events), allowing non-technical staff to query PostgreSQL using conversational AI
 - Began company-wide adoption of self-hosted infrastructure with Coolify, replacing multiple SaaS subscriptions
 
