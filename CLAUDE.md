@@ -21,7 +21,22 @@ The resume exists in a pipeline of increasing polish:
 | `resume-taoufiq-lotfi.pdf` | **Final PDF** — 2-page A4 PDF exported from `resume.html` via Playwright. The file that actually gets sent out. |
 | `resume-preview.png` | Screenshot preview of the PDF resume. |
 
-**When updating the resume:** Start with `resume.md` (raw truth), then propagate changes to `resume-elaborated.md`, then `resume-marketing.md`, then regenerate `resume.html` and the PDF.
+**When updating the resume:** Start with `resume.md` (raw truth), then propagate changes to `resume-elaborated.md`, then `resume-marketing.md`, then update `resume.html` to match, then regenerate the PDF.
+
+### Generating the PDF
+
+1. Start a local HTTP server from the repo root: `python3 -m http.server 8788`
+2. Use Playwright MCP to navigate to `http://localhost:8788/resume.html`
+3. Generate the PDF with:
+   ```js
+   await page.pdf({
+     path: '/path/to/repo/resume-taoufiq-lotfi.pdf',
+     format: 'A4',
+     margin: { top: '10mm', bottom: '10mm', left: '12mm', right: '12mm' },
+     printBackground: true
+   });
+   ```
+4. Verify the PDF is 2 pages — if it overflows to 3, trim bullet points or reduce wording in `resume.html`.
 
 ### `blog-posts/` — Blog Posts
 
