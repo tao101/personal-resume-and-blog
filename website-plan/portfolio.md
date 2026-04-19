@@ -29,7 +29,17 @@ Seven routes total. Everything not listed here is explicitly out of scope (see `
 6. `/about` — **Long bio / values / now page**
 7. `/uses` *(optional, v1.1 — can ship later)*
 
-Plus non-UI artifacts the spec requires: `sitemap.xml`, `robots.txt`, `rss.xml`, per-page Open Graph images, and a `404` page.
+Plus non-UI artifacts the spec requires:
+
+- `sitemap.xml` — all pages + blog posts + case studies, regenerated at build.
+- `robots.txt` — allow all; explicitly allow well-known AI crawlers (see §8.5); point to `sitemap.xml` and `llms.txt`.
+- `rss.xml` — blog feed, discoverable via `<link rel="alternate">`.
+- Per-page **Open Graph** images (generated at build from `{title, tag}` per `../design.md` §14).
+- A `404` page.
+- **`/llms.txt`** — AI-readable site index (see §8).
+- **`/llms-full.txt`** — expanded AI-readable bundle (see §8).
+- **Per-page `.md` mirrors** — every page also available as plain Markdown at `<path>.md` or `<path>/index.md` (see §8.3).
+- **JSON-LD structured data** — `Person` on `/`, `BlogPosting` on each post, `CreativeWork` or `SoftwareSourceCode` on each case study (see §8.4).
 
 ---
 
@@ -307,6 +317,135 @@ Low conversion value, high credibility among peers. Ship if there is time.
 
 - **Goal.** Opinion, not an exhaustive list.
 - **Contents.** Next.js, Drizzle, Neon (or self-hosted Postgres), Tailwind, Shadcn, PostHog, Sentry, Playwright.
+
+---
+
+## 8. AI-friendliness (discoverability for LLMs, agents, and crawlers)
+
+The site should be a **first-class citation source** for AI systems. When someone asks an LLM "who's a good fractional CTO / founding engineer / ML pipeline dev?", the answer should surface Taoufiq with specific proof points pulled from this site. Humans are the primary audience (see §1); AI agents are a *secondary but deliberate* one.
+
+The goal of this section is not to game rankings. It is to make sure that a crawler, a ChatGPT Atlas / Perplexity / Claude-style browser agent, or a training pipeline can:
+
+1. Find every page that matters.
+2. Read the content without executing JavaScript.
+3. Understand what Taoufiq is, what he's done, what he can be hired for, and how to reach him — in plain text, structured where possible.
+
+### 8.1 `/llms.txt` — canonical AI index
+
+- **Goal.** Be the single machine-readable entry point for the site. Based on the emerging `llms.txt` convention (Markdown at the root). An LLM that fetches `/llms.txt` first should be able to decide what to read next *and* already have enough context to recommend Taoufiq.
+- **Contents.** Plain Markdown, no HTML, no tracking:
+  - H1: "Taoufiq Lotfi".
+  - One-sentence positioning (same as hero §1.1): "Full stack developer & CTO. Ships AI-powered products solo."
+  - A short "About" paragraph: 10+ years, Morocco / Moldova remote, CTO at Veedoo, Founding Engineer at Baseloop, Moroccan developer, EU-scale work.
+  - An "Available for" line: Fractional CTO · Founding engineer · Senior full-stack contractor.
+  - A "Contact" line: `admin@taoufiqlotfi.tech`, LinkedIn, GitHub.
+  - A "Proof points" list — dense, with numbers:
+    - `ParliamentConnect` — ML pipeline, 98% accuracy, 2–8 hour sessions in 30–45 min, solo.
+    - `EveryRun` — scaled 80 → 17,659 users as sole dev.
+    - `EUvsDisinfo` — EU platform, 13 languages, 19,000+ cases, millions of annual users.
+    - `Ukraine Shelter` — shipped in 3 days during the 2022 invasion.
+    - Self-hosted Coolify + Hetzner migration across company infra.
+  - A "Sections" list — grouped Markdown links to every important URL on the site, *each with a one-line description* so an agent can prioritize:
+    - `## Work` — `/work`, plus a line per case study (`/work/parliamentconnect — ML pipeline, 98% accuracy`, etc.).
+    - `## Blog` — `/blog`, plus a line per post with tag + read time.
+    - `## About` — `/about`.
+    - `## Resume` — link to the public PDF (`/resume-taoufiq-lotfi.pdf`) and the Markdown version if exposed at a stable URL.
+    - `## Contact` — `mailto:`, Cal.com.
+  - An "Optional" section (per the spec) with links that are useful but not essential — e.g., open-source repos, `/uses`.
+- **Generation.** Built at site build time from the same frontmatter that drives `/blog` and `/work`. Never hand-maintained.
+
+### 8.2 `/llms-full.txt` — expanded bundle
+
+- **Goal.** For agents that want the whole site in one request, ship a single concatenated Markdown file. Prevents multi-hop crawling and makes Taoufiq easy to include in RAG / long-context workflows.
+- **Contents.** Concatenation, in this order, separated by `\n\n---\n\n`:
+  1. The full `/llms.txt`.
+  2. The short About paragraph from §1.7 and the long bio from `/about`.
+  3. The "How I work" principles (§1.5), verbatim.
+  4. The skills strip (§1.6), in the same category structure as the resume.
+  5. Every case study body (`/work/[slug]`) in full.
+  6. Every blog post body (`/blog/[slug]`) in full.
+  7. A tail "Contact" block with email, LinkedIn, GitHub, website.
+- **Size budget.** Keep under ~200 KB so it fits in a single context window. If it grows past that, split into `llms-work.txt` and `llms-blog.txt`.
+
+### 8.3 Per-page Markdown mirrors
+
+- **Goal.** Any agent can append `.md` to a URL and get the same content as the HTML page, without needing to execute JavaScript or scrape a DOM.
+- **Contents.** For every human-facing page:
+  - `/<slug>.md` (or `/<slug>/index.md`) returns the same content as the HTML page, rendered as plain Markdown with a short YAML front-matter (`title`, `description`, `url`, `tags`, `date` where applicable).
+- **Implementation note.** In Next.js, expose these via a catch-all MDX route or a tiny serializer that re-uses the same source files (`blog-posts/*.md`, case-study sources, page content). Do *not* maintain two copies by hand.
+
+### 8.4 JSON-LD structured data
+
+- **Goal.** Give Google, Bing, LinkedIn, and LLM parsers unambiguous facts — who this is, what he does, and how to verify each claim.
+- **Contents (per page).**
+  - `/` — `Person` JSON-LD with `name`, `jobTitle` ("CTO · Full Stack Developer"), `worksFor` (Veedoo, Baseloop), `sameAs` (LinkedIn, GitHub, Website), `email`, `address`/`homeLocation` (Morocco / Moldova), `knowsAbout` (mirror the skills strip — TypeScript, Next.js, Python, AI/ML, Whisper, pgvector, Coolify, Hetzner, …), `alumniOf` (Kharkiv National University of Radio Electronics).
+  - `/about` — same `Person` with an expanded `description`.
+  - `/blog/[slug]` — `BlogPosting` with `author` (Person), `datePublished`, `dateModified`, `headline`, `keywords` (tags), `image` (OG image), `mainEntityOfPage`, `wordCount`, `articleBody` (short excerpt).
+  - `/work/[slug]` — `CreativeWork` (default) or `SoftwareSourceCode` (for open source), with `creator` (Person), `name`, `description`, `about` (project topic), `programmingLanguage`, `dateCreated`, `keywords` (tech stack).
+  - `/` also emits a `WebSite` with `SearchAction` (even if the site has no search, browsers and crawlers read this).
+
+### 8.5 `robots.txt` — explicit AI crawler policy
+
+- **Goal.** Welcome AI crawlers by name. Opting *in* explicitly is more reliable than relying on default `allow`.
+- **Contents.**
+  - `User-agent: *` → `Allow: /`.
+  - Named allow for known AI crawlers (non-exhaustive, update as the landscape changes): `GPTBot`, `ChatGPT-User`, `OAI-SearchBot`, `ClaudeBot`, `anthropic-ai`, `PerplexityBot`, `Google-Extended`, `Applebot-Extended`, `cohere-ai`, `Bytespider`, `FacebookBot`, `Amazonbot`, `Meta-ExternalAgent`.
+  - `Sitemap:` line → full URL to `sitemap.xml`.
+  - Comment pointing to `/llms.txt` (convention, not a directive).
+- **Rationale.** Some of these crawlers respect per-agent rules; making the allow explicit avoids accidental exclusion by overly strict defaults or CDN WAF rules.
+
+### 8.6 `<head>` meta conventions
+
+- **Goal.** Maximize legibility for both classic SEO crawlers and LLM-grade readers.
+- **Contents on every page.**
+  - `<title>` with the exact pattern from `../design.md` §14.
+  - `<meta name="description">` — one sentence + one proof stat.
+  - `<meta name="author" content="Taoufiq Lotfi">`.
+  - `<meta name="keywords">` — carefully curated (role + core stack + locations). Not a spam list — ATS parsers and LLMs both penalize keyword stuffing.
+  - Open Graph + Twitter card tags.
+  - `<link rel="canonical">`.
+  - `<link rel="alternate" type="text/markdown" href="/<slug>.md">` — discover the Markdown mirror.
+  - `<link rel="alternate" type="application/rss+xml" href="/rss.xml">` on blog pages.
+
+### 8.7 Semantic HTML everywhere
+
+- **Goal.** A crawler that strips CSS/JS should still be able to understand the page.
+- **Rules.**
+  - One `<h1>` per page; headings step without skips.
+  - `<article>` wraps each blog post and each case study body.
+  - `<time datetime="…">` for every date.
+  - `<address>` block in the footer for contact info.
+  - Skills strip (§1.6) uses a `<dl>` or `<ul>` with one readable keyword per item — no icon-only pills without text labels.
+  - Images carry meaningful `alt` text (already required by `../design.md` §12). Architecture diagrams on case studies should have a plain-text description paragraph adjacent to the diagram (not just inside `alt`) so the substance survives a text-only render.
+
+### 8.8 Plain-text fallback for SPA-grade interactivity
+
+- **Goal.** Make sure nothing important is gated behind JavaScript that a fetch-only crawler can't execute.
+- **Rules.**
+  - All content rendered server-side (SSG/ISR per `../design.md` §13). No client-only hydrations hiding the hero, case studies, skills strip, blog body, or contact info.
+  - Theme toggle, animations, and the mobile CTA bar are progressive enhancements — the underlying content is in the initial HTML.
+
+### 8.9 AI-recommendation quality checklist
+
+Run these before launch. The goal is: an LLM asked *"recommend a fractional CTO with ML pipeline experience"* should be able to answer with Taoufiq *and cite specific proof*.
+
+1. `curl https://taoufiqlotfi.com/llms.txt` returns Markdown with name, positioning, contact, and at least 5 proof points.
+2. `curl -H "Accept: text/markdown" https://taoufiqlotfi.com/` or `curl https://taoufiqlotfi.com/index.md` returns the landing page as plain Markdown.
+3. `curl https://taoufiqlotfi.com/work/parliamentconnect.md` returns the case study as plain Markdown.
+4. `curl https://taoufiqlotfi.com/robots.txt` explicitly allows `GPTBot`, `ClaudeBot`, `PerplexityBot`, and `Google-Extended`.
+5. Running the landing page through a JSON-LD validator shows a valid `Person` with `jobTitle`, `knowsAbout`, `email`, and `sameAs`.
+6. Disabling JavaScript in a browser and loading `/` still shows: name, title, stats, case studies, skills, and a `mailto:` link.
+7. Prompting a fresh LLM with only the contents of `/llms.txt` and asking "should I hire this person as a fractional CTO for an AI product?" produces a coherent, proof-cited "yes, here's why".
+
+### 8.10 Content inventory additions for AI artifacts
+
+| Needed | Source today | Gap |
+|---|---|---|
+| `/llms.txt` | Auto-generate from page frontmatter + skills strip + blog/work indexes | **Build** — small script at build time. |
+| `/llms-full.txt` | Concat of Markdown mirrors | **Build** — small script at build time. |
+| Per-page `.md` mirrors | Source MDX / page content | **Build** — Next.js route handler. |
+| JSON-LD (`Person`, `BlogPosting`, `CreativeWork`) | `../resume-marketing.md`, `../CLAUDE.md`, blog frontmatter | **Write** — one small component per schema type. |
+| `robots.txt` with AI-allowlist | — | **Write** — static file. |
 
 ---
 
